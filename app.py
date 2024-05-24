@@ -34,7 +34,7 @@ def follow():
     userIdToFollow = int(payload['follow'])
     
     if userId not in app.users or userIdToFollow not in app.users:
-        return '사용자가 존재하지 않습니다.' 400
+        return '사용자가 존재하지 않습니다.', 400
     
     user = app.users[userId]
     if user.get('follow'):
